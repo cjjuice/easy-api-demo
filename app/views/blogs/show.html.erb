@@ -1,2 +1,9 @@
-<h1>Blog<h1>
-
+<h1 style="padding-bottom: 50px;">Blog<h1>
+<% if @data %>	
+  <% @data.each do |r|%>
+	  <h4>Author: <%= r["Author"]["Name"] %></h4>
+	  <h4>Title: <%= r["Title"] %></h4>
+	  <h4>Text: <%= r["Text"] %></h4>
+	  <hr>
+  <% end %>	
+<% end %>	

@@ -11,8 +11,5 @@
 <% end %>
 
 <% if @result %>
-  <%= @result %>
-  <% if params %>
-    <%= params %>
-  <% end %>
+  <div>Status: <%= @result['status'].upcase %></div>
 <% end %>

@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   def post_to_api
     if params[:title] 
-      json = 'data={"Title": "%s","Text": "%s","Author": {"Name": "%s","Email": "a@b.com"}, "Tags": ["red"]}' % [params[:title], params[:text], params[:author]]
+      json = 'data={"Title": "%s","Text": "%s","Author": {"Name": "%s","Email": "someone@example.com"}, "Tags": ["hack"]}' % [params[:title], params[:text], params[:author]]
       @result = HTTParty.post('http://api.easyapi.co/endpoints/instance/create?blueprintname=blogpost', 
           :body =>  json ,
           :headers => { 'Content-Type' => 'application/x-www-form-urlencoded' } ) 
@@ -11,8 +11,15 @@ class BlogsController < ApplicationController
   end    
   
   def show
-    response = HTTParty.get('http://api.easyapi.co/endpoints/render?id=2')
+    @response = HTTParty.get('http://api.easyapi.co/endpoints/render?id=2')
     
-    render :json => response
+    #puts @response.body, @response.code, @response.message, @response.headers.inspect
+
+    @response.each do |item|
+      puts item
+    end
+    #@data = JSON.parse response
+    
+    @data = @response['blogpost']
   end  
 end
