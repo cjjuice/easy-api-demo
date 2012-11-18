@@ -1,0 +1,17 @@
+
+development:
+  adapter: postgresql
+  database: easyapiweb_development
+  pool: 5
+  timeout: 5000
+  username: cbordeleau
+  password:
+
+test:
+  adapter: postgresql
+  database: easyapiweb_test
+  pool: 5
+  timeout: 5000
+  username: cbordeleau
+  password:
+

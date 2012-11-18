@@ -1,0 +1,18 @@
+<h1 style="margin-top:50px;">New Post</h1>
+
+<%= form_tag '/add' do %>
+  <h5 style="margin-top:50px;">Author</h5>
+  <%= text_field_tag(:author) %><br/>
+  <h5>Title</h5>
+  <%= text_field_tag(:title) %><br/>
+  <h5>Text</h5>
+  <%= text_area_tag(:text) %><br/>
+  <%= submit_tag("Submit") %>
+<% end %>
+
+<% if @result %>
+  <%= @result %>
+  <% if params %>
+    <%= params %>
+  <% end %>
+<% end %>
