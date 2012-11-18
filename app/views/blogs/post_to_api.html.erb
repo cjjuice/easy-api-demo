@@ -1,5 +1,12 @@
 <h1 style="margin-top:50px;">New Post</h1>
-
+<ul class="nav nav-pills">
+  <li>
+    <a href="/">Home</a>
+  </li>
+  <li class="active">
+	  <a href="/add">Add</a>
+	</li>
+</ul>
 <%= form_tag '/add' do %>
   <h5 style="margin-top:50px;">Author</h5>
   <%= text_field_tag(:author) %><br/>
@@ -7,7 +14,7 @@
   <%= text_field_tag(:title) %><br/>
   <h5>Text</h5>
   <%= text_area_tag(:text) %><br/>
-  <%= submit_tag("Submit") %>
+  <%= submit_tag "Submit", :class => "btn"  %>
 <% end %>
 
 <% if @result %>

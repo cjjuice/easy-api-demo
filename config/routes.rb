@@ -2,6 +2,8 @@ Easyapiweb::Application.routes.draw do
   
   match '/show' => 'blogs#show'
   match '/add' => 'blogs#post_to_api'
+  
+  root :to => 'blogs#show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

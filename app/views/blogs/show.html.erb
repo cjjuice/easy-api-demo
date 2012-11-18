@@ -1,4 +1,13 @@
-<h1 style="padding-bottom: 50px;">Blog<h1>
+<h1 style="margin-top:50px;">All Posts</h1>
+<ul class="nav nav-pills">
+  <li class="active">
+    <a href="/">Home</a>
+  </li>
+  <li>
+	  <a href="/add">Add</a>
+	</li>
+</ul>
+<div style="margin-top:50px;">
 <% if @data %>	
   <% @data.each do |r|%>
 	  <h4>Author: <%= r["Author"]["Name"] %></h4>
@@ -7,3 +16,4 @@
 	  <hr>
   <% end %>	
 <% end %>	
+</div>
